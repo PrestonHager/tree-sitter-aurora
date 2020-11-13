@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "tree-sitter test",
-    "build": "tree-sitter generate"
+    "build": "tree-sitter generate && node-gyp build"
   },
   "author": "Preston Hager",
   "license": "GPL-3.0-or-later",
