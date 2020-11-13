@@ -4,7 +4,8 @@
   "description": "A tree-sitter grammar for the Aurora language.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tree-sitter test",
+    "build": "tree-sitter generate"
   },
   "author": "Preston Hager",
   "license": "GPL-3.0-or-later",
