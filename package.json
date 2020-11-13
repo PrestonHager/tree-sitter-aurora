@@ -1,0 +1,17 @@
+{
+  "name": "tree-sitter-aurora",
+  "version": "0.0.0",
+  "description": "A tree-sitter grammar for the Aurora language.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Preston Hager",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "tree-sitter-cli": "^0.17.3"
+  },
+  "dependencies": {
+    "nan": "^2.14.2"
+  }
+}

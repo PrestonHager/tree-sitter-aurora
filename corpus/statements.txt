@@ -1,0 +1,70 @@
+==================
+Source File
+==================
+
+
+---
+
+(source_file)
+
+======================
+Function Definition
+======================
+
+func: print> => Void;
+
+end;
+
+---
+
+(source_file
+  (function_definition
+    (identifier)
+    (function_parameter_list)
+    (function_return_type)
+    (block)))
+
+======================
+Variable's Definition
+======================
+
+Number: age = 15;
+
+---
+
+(source_file
+  (variable_definition
+    (identifier)
+    (number)))
+
+======================
+Function's Parameters
+======================
+
+func: hello>person::String => Void;
+
+end;
+
+---
+
+(source_file
+  (function_definition
+    (identifier)
+    (function_parameter_list
+      (identifier))
+    (function_return_type)
+    (block)))
+
+======================
+Function Call
+======================
+
+hello>person;
+
+---
+
+(source_file
+  (function_call
+    (identifier)
+    (parameter_list
+      (identifier))))

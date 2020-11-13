@@ -1,0 +1,3 @@
+func: hello>person::String => Void;
+
+end;
