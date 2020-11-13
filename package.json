@@ -12,6 +12,7 @@
     "tree-sitter-cli": "^0.17.3"
   },
   "dependencies": {
-    "nan": "^2.14.2"
+    "nan": "^2.14.2",
+    "node-gyp": "^7.1.2"
   }
 }
