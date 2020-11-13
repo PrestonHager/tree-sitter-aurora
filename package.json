@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-aurora",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A tree-sitter grammar for the Aurora language.",
   "main": "index.js",
   "scripts": {
