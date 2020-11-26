@@ -20,7 +20,7 @@ module.exports = grammar({
     ),
 
     variable_definition: $ => seq(
-      $._type,
+      $.type,
       ':',
       field('name', $.identifier),
       '=',
@@ -64,12 +64,12 @@ module.exports = grammar({
     _function_parameter: $ => seq(
       $.identifier,
       '::',
-      $._type
+      $.type
     ),
 
     function_return_type: $ => seq(
       '=>',
-      $._type
+      $.type
     ),
 
     function_call: $ => seq(
@@ -91,7 +91,7 @@ module.exports = grammar({
       'if>'
     ),
 
-    _type: $ => choice(
+    type: $ => choice(
       'Void',
       'Number',
       'String'
