@@ -24,12 +24,7 @@ module.exports = grammar({
       ':',
       field('name', $.identifier),
       '=',
-      field('value', choice(
-        $.string,
-        $.number,
-        $.boolean,
-        'null'
-      ))
+      field('value', $.expression)
     ),
 
     block: $ => seq(
@@ -79,16 +74,26 @@ module.exports = grammar({
 
     return_statement: $ => seq(
       'return',
-      choice(
-        $.string,
-        $.number,
-        $.boolean,
-        'null'
-      )
+      $.expression
     ),
 
     if_statement: $ => seq(
-      'if>'
+      'if>',
+      $.comparison
+    ),
+
+    comparison: $ => seq(
+      $.expression,
+      choice("?=", "?>", "?<", "?>=", "?<="),
+      $.expression
+    ),
+
+    expression: $ => seq(
+      choice($.identifier, $.string, $.number, $.boolean),
+      repeat(seq(
+        choice("+", "-", "*", "/"),
+        choice($.identifier, $.string, $.number, $.boolean)
+      ))
     ),
 
     type: $ => choice(

@@ -52,7 +52,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_type"
+          "name": "type"
         },
         {
           "type": "STRING",
@@ -74,25 +74,8 @@
           "type": "FIELD",
           "name": "value",
           "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "string"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "number"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "boolean"
-              },
-              {
-                "type": "STRING",
-                "value": "null"
-              }
-            ]
+            "type": "SYMBOL",
+            "name": "expression"
           }
         }
       ]
@@ -235,7 +218,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_type"
+          "name": "type"
         }
       ]
     },
@@ -248,7 +231,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_type"
+          "name": "type"
         }
       ]
     },
@@ -273,8 +256,72 @@
           "value": "return"
         },
         {
+          "type": "SYMBOL",
+          "name": "expression"
+        }
+      ]
+    },
+    "if_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "if>"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "comparison"
+        }
+      ]
+    },
+    "comparison": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "expression"
+        },
+        {
           "type": "CHOICE",
           "members": [
+            {
+              "type": "STRING",
+              "value": "?="
+            },
+            {
+              "type": "STRING",
+              "value": "?>"
+            },
+            {
+              "type": "STRING",
+              "value": "?<"
+            },
+            {
+              "type": "STRING",
+              "value": "?>="
+            },
+            {
+              "type": "STRING",
+              "value": "?<="
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "expression"
+        }
+      ]
+    },
+    "expression": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "identifier"
+            },
             {
               "type": "SYMBOL",
               "name": "string"
@@ -286,25 +333,62 @@
             {
               "type": "SYMBOL",
               "name": "boolean"
-            },
-            {
-              "type": "STRING",
-              "value": "null"
             }
           ]
-        }
-      ]
-    },
-    "if_statement": {
-      "type": "SEQ",
-      "members": [
+        },
         {
-          "type": "STRING",
-          "value": "if>"
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "STRING",
+                    "value": "+"
+                  },
+                  {
+                    "type": "STRING",
+                    "value": "-"
+                  },
+                  {
+                    "type": "STRING",
+                    "value": "*"
+                  },
+                  {
+                    "type": "STRING",
+                    "value": "/"
+                  }
+                ]
+              },
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "identifier"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "string"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "number"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "boolean"
+                  }
+                ]
+              }
+            ]
+          }
         }
       ]
     },
-    "_type": {
+    "type": {
       "type": "CHOICE",
       "members": [
         {

@@ -21,7 +21,8 @@ end;
   (function_definition
     (identifier)
     (function_parameter_list)
-    (function_return_type)
+    (function_return_type
+      (type))
     (block)))
 
 ======================
@@ -34,8 +35,10 @@ Number: age = 15;
 
 (source_file
   (variable_definition
+    (type)
     (identifier)
-    (number)))
+    (expression
+      (number))))
 
 ======================
 Function's Parameters
@@ -51,8 +54,10 @@ end;
   (function_definition
     (identifier)
     (function_parameter_list
-      (identifier))
-    (function_return_type)
+      (identifier)
+      (type))
+    (function_return_type
+      (type))
     (block)))
 
 ======================

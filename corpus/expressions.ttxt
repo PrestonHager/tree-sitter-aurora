@@ -1,0 +1,34 @@
+======================
+Simple Comparison
+======================
+
+if>variable ?= true;
+
+---
+
+(source_file
+  (if_statement
+    (comparison
+      (expression
+        (identifier))
+      (expression
+        (boolean)))))
+
+======================
+Complex Comparison
+======================
+
+if>variable + tree ?<= twice * 2 - 1;
+
+---
+
+(source_file
+  (if_statement
+    (comparison
+      (expression
+        (identifier)
+        (identifier))
+      (expression
+        (identifier)
+        (number)
+        (number)))))
