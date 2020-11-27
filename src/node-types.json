@@ -119,6 +119,16 @@
           }
         ]
       },
+      "func_keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "func",
+            "named": false
+          }
+        ]
+      },
       "name": {
         "multiple": false,
         "required": true,
@@ -284,6 +294,16 @@
           }
         ]
       },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "type",
+            "named": true
+          }
+        ]
+      },
       "value": {
         "multiple": false,
         "required": true,
@@ -294,24 +314,14 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "type",
-          "named": true
-        }
-      ]
     }
   },
   {
-    "type": "*",
+    "type": "\n",
     "named": false
   },
   {
-    "type": "*/",
+    "type": "*",
     "named": false
   },
   {
@@ -324,10 +334,6 @@
   },
   {
     "type": "/",
-    "named": false
-  },
-  {
-    "type": "/*",
     "named": false
   },
   {
@@ -403,7 +409,7 @@
     "named": false
   },
   {
-    "type": "func:",
+    "type": "func",
     "named": false
   },
   {

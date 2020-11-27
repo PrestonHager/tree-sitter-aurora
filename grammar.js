@@ -2,25 +2,30 @@ module.exports = grammar({
   name: 'Aurora',
 
   word: $ => $.identifier,
+  extras: $ => [
+    '\n',
+    ' '
+  ],
 
   rules: {
     source_file: $ => repeat($._statement),
 
-    _statement: $ => seq(
-      choice(
-        $.function_definition,
-        $.variable_definition,
-        $.function_call,
-        $.return_statement,
-        $.if_statement,
-        $.comment
-        // TODO: add more definitions
+    _statement: $ => choice(
+      seq(
+        choice(
+          $.function_definition,
+          $.variable_definition,
+          $.function_call,
+          $.return_statement,
+          $.if_statement,
+        ),
+        ';'
       ),
-      ';'
+      $.comment
     ),
 
     variable_definition: $ => seq(
-      $.type,
+      field('type', $.type),
       ':',
       field('name', $.identifier),
       '=',
@@ -33,7 +38,8 @@ module.exports = grammar({
     ),
 
     function_definition: $ => seq(
-      'func:',
+      field('func_keyword', 'func'),
+      ':',
       field('name', $.identifier),
       field('parameters', $.function_parameter_list),
       field('return_type', $.function_return_type),
@@ -103,8 +109,7 @@ module.exports = grammar({
     ),
 
     comment: $ => choice(
-      seq('//', /.*/),
-      seq('/*', /.*/, '*/')
+      seq('//', /.*/, '\n')
     ),
 
     string: $ => /".*"/,

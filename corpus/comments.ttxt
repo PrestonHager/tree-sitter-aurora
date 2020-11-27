@@ -1,0 +1,10 @@
+======================
+Single Comment
+======================
+
+// This is a signle-line comment.
+
+---
+
+(source_file
+  (comment))
