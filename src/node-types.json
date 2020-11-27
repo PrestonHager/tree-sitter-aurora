@@ -198,7 +198,18 @@
   {
     "type": "if_statement",
     "named": true,
-    "fields": {},
+    "fields": {
+      "if_keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "if",
+            "named": false
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": false,
       "required": true,
@@ -417,7 +428,7 @@
     "named": true
   },
   {
-    "type": "if>",
+    "type": "if",
     "named": false
   },
   {

@@ -282,8 +282,16 @@
       "type": "SEQ",
       "members": [
         {
+          "type": "FIELD",
+          "name": "if_keyword",
+          "content": {
+            "type": "STRING",
+            "value": "if"
+          }
+        },
+        {
           "type": "STRING",
-          "value": "if>"
+          "value": ">"
         },
         {
           "type": "SYMBOL",

@@ -84,7 +84,8 @@ module.exports = grammar({
     ),
 
     if_statement: $ => seq(
-      'if>',
+      field('if_keyword', 'if'),
+      '>',
       $.comparison
     ),
 
